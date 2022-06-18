@@ -1,0 +1,22 @@
+--------------------FOOD QUICK INVOICE-------------------
+Driver :  Kailan Snow, Bloemfontein, 6
+Order  number  270805
+Customer:  Yannick Makwenge
+Email:  Yannick@hotmail.com
+Phone number:  07845166818
+Location:  Bloemfontein
+
+You have ordered the following from  Steers  in  Bloemfontein  02 longstreet
+
+3x  Pizza (963 R)
+Special instructions :  no salami
+
+3x  Burger (435 R)
+
+Total :   1398 R
+John Krill  is nearest to the restaurant and so he will be delivering your
+order to you at:
+
+31 Wilderness Road
+
+If you need to contact the restaurant, their number is  07845166818

@@ -1,0 +1,22 @@
+------------------FOOD QUICK PLANNING----------------------
+
+First, I am going to create 4 classes:
+- Customer for customers 
+- Meal for meals
+- Restaurant for restaurants
+- Main for the code and running the program
+ 
+I have chosen to not create Classes for drivers and orders since I will read
+drivers from the drivers' file and I will write the orders on invoice files.
+
+Then I'm going to add attributes and behaviors for Customer, Meal, and Restaurants classes.
+In other words, I will create variables, constructors, and a method to create new instances of each class.
+
+After that in the Main class, I will create differents methods:
+- one to read the drivers files
+- one to find the nearest driver
+- one to determine if the driver is too far for the customer
+- one to write the invoice file
+
+Finally, I will use the methods created in all classes in the Main class to create instances of objects
+and to generate the invoice file
