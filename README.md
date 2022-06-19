@@ -2,8 +2,7 @@
 
 ## Description 
 
-This is a program that generates invoices in text files from food orders. 
-The invoice contains the customer, resaurant and meals details.
+This is a program that generates invoices in text files using a list of drivers text file, customer, resaurant and meals details.
 
 ## Purpose
 
