@@ -13,12 +13,12 @@ public class Main {
 		String newFilePath="src/Invoice.txt";
 		
 		/*------------These are example objects that can be used to test the program--------*/
-		//Customer cust1 = new Customer("Yannick","Makwenge","Yannick@hotmail.com","07845166818","Bloemfontein","31 Wilderness Road");
-		//Restaurant rest1 = new Restaurant("Steers","Bloemfontein","07845166818","02 longstreet");
+		Customer cust1 = new Customer("Yannick","Makwenge","Yannick@hotmail.com","07845166818","Bloemfontein","31 Wilderness Road");
+		Restaurant rest1 = new Restaurant("Steers","Bloemfontein","07845166818","02 longstreet");
 		
 		//Creating new Objects of customer and restaurant
-		Customer cust1 = Customer.addCustomer();
-		Restaurant rest1 = Restaurant.addRestaurant();
+		//Customer cust1 = Customer.addCustomer();
+		//Restaurant rest1 = Restaurant.addRestaurant();
 
 		//calling the function writeInvoice to generate a new Invoice file
 		 writeInvoice(newFilePath,filePath,cust1,rest1);
@@ -50,10 +50,8 @@ public class Main {
 	public static String findDriver(ArrayList<String> arr, Restaurant rest) {
 		// Initialising variables
 		ArrayList<String> nearestDrivers = new ArrayList();
-		StringBuilder builder = new StringBuilder();
 		int loadNumber = 0;
 		String selectedDriver = "";
-		Boolean nearestDriverFound;
 		int lowestLoad = (int) Double.POSITIVE_INFINITY;
 
 		// Get the list of the drivers in the same area as the restaurant
@@ -100,10 +98,8 @@ public class Main {
 		Meal meal2 = Meal.addMeal();
 		
 		//Initialising totals variables for the invoice
-		int totalmeal1 = meal1.price * meal1.quantity;
-		int totalmeal2 = meal2.price * meal2.quantity;
-		int total = totalmeal1 + totalmeal2;
-		
+		int totalMeal = meal1.price * meal1.quantity;
+		int total = 0; 
 		
 		String driver = findDriver(readDriver(filePath),rest);//call the function findDriver and stores the nearest driver to a variable driver
 		Boolean isTooFar= checkDriverArea(driver,cust);//call the function Check driver area that return a boolean value
@@ -128,15 +124,18 @@ public class Main {
 			f.format("%s %s %s %s %s", "You have ordered the following from ", rest.name + " ", "in ",
 					rest.location +" ",rest.fullAddress+"\r\n");
 			f.format("%s", "\r\n");
-			f.format("%s %s %s", meal1.quantity + "x ", meal1.name, "(" + totalmeal1 + " R)\r\n");
+			f.format("%s %s %s", meal1.quantity + "x ", meal1.name, "(" + totalMeal + " R)\r\n");
 			if(!meal1.instruction.equals("")) {
 				f.format("%s %s", "Special instructions : ", meal1.instruction+ "\r\n");
 				f.format("%s", "\r\n");
 			}
-			f.format("%s %s %s", meal2.quantity + "x ", meal2.name, "(" + totalmeal2 + " R)\r\n");
+			total+=totalMeal;
+			totalMeal = meal2.price * meal2.quantity;
+			f.format("%s %s %s", meal2.quantity + "x ", meal2.name, "(" + totalMeal + " R)\r\n");
 			if(!meal2.instruction.equals("")) {
 				f.format("%s %s", "Special instructions : ", meal2.instruction+ "\r\n");
 			}
+			total+=totalMeal;
 			f.format("%s", "\r\n");
 			f.format("%s %s", "Total :  ", total + " R\r\n");
 			f.format("%s %s", "John Krill ", "is nearest to the restaurant and so he will be delivering your\r\n");
