@@ -6,7 +6,7 @@ This is a program that generates invoices in text files using a list of drivers 
 
 ## Purpose
 
-The purpose of this project was to show my understanding of OOP programming using java from HyperionDev.
+The purpose of this project was to show my understanding of Java I/O text from HyperionDev.
 
 ## Languages
 
